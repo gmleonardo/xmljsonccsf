@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE Books [
-  <!ENTITY copyright "©">
+  <!ENTITY copyright "&#169;">
 ]>
 <?xml-stylesheet href="hw2.css" type="text/css"?>
 <!-- Books are being donated by instructors and publishers-->
