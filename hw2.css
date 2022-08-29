@@ -1,0 +1,37 @@
+Books {
+  background-color: rgb(232, 232, 232);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+Book,
+Header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 10px;
+  width: 80%;
+  margin-left: 10%;
+}
+
+Header {
+  padding-top: 10px;
+  font-weight: bolder;
+  font-size: 22px;
+}
+
+List {
+  padding: 20px;
+  font-weight: bold;
+  font-size: larger;
+  font-size: 25px;
+  display: block;
+  margin-left: 42%;
+}
+
+Title {
+  color: red;
+  font-weight: bold;
+}
+
+Book:nth-child(odd) {
+  background-color: skyblue;
+}
