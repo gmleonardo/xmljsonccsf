@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:annotation>
+  <xs:documentation>1.The Name: should only accept a maximum of 30 characters </xs:documentation>
+  <xs:documentation>2.The Age: should have a minimum of 21 and if nothing is stated for age, the default value should be 21 </xs:documentation>
+  <xs:documentation>3.The Date: should be on that format that you see in hw6.xml file </xs:documentation>
+  <xs:documentation>4.The Phone: should always be using that pattern of 3 digits - 3 digits - 4 digits </xs:documentation>
+</xs:annotation>
+<xs:element name="Member">
+  <xs:complexType>
+    <xs:sequence>
+
+      <xs:element name="Name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+
+
+      <xs:element name="Age" default="21">
+        <xs:simpleType>
+          <xs:restriction base="xs:positiveInteger"  >
+            <xs:minInclusive value="21" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element name="Job" type="xs:string" />
+      <xs:element name="Date" type="xs:date"/>
+
+      <xs:element name="Phone">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+          <xs:pattern value="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+  
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>
