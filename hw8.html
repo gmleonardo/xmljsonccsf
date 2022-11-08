@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Homework 8: XQuery and XML</title>
+    <style>
+      .wrap {
+        width: 100%;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 20px;
+        border-collapse: collapse;
+      }
+
+      td:nth-child(1) {
+        width: 15%;
+      }
+      th {
+        background-color: skyblue;
+        font-size: 25px;
+      }
+
+      html {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: rgb(232, 232, 232);
+      }
+
+      h1 {
+        padding: 40px;
+        margin-left: 20%;
+        font-size: 40px;
+      }
+
+      h2 {
+        padding: 10px;
+        margin-left: 22%;
+        font-size: 30px;
+      }
+
+      h1,
+      h2 {
+        color: blueviolet;
+      }
+
+      h3{
+        margin-left: 3rem;
+      }
+      p {
+        display: block;
+        padding: 1.5rem;
+        margin-left: 2rem;
+        width: 80%;
+        font-size: 20px;
+        line-height: 2.5rem;
+      }
+
+      ul li {
+        list-style: inside;
+        font-size: 20px;
+        line-height: 3rem;
+      }
+
+      a:link {
+        font-size: 18px;
+        color: blueviolet;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: blueviolet;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: blueviolet;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      a:active {
+        color: blueviolet;
+        text-decoration: none;
+      }
+
+      figure {
+        padding-bottom: 2rem;
+        
+      }
+
+      img, figcaption{
+        margin-left:20rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>XQuery and XML</h1>
+      <p>
+        Our experience with XML has been that we could organize our data through
+        Extensible Markup Language. It has been designed to carry some
+        information, and we can incorporate it into our document when we create
+        our website with HMTL and CSS. However, what can we do if I am
+        interested in exploring or applying a filter on data, and then we can
+        see it on the Browser? We can try it with XQuery is a query language
+        linked with a XML files if we can retrieve data from them.
+      </p>
+    </header>
+    <div class="wrap">
+      <section class="section1">
+        <h2>XQuery, An Introduction</h2>
+        <p>
+          XQuery is a functional language that we can use to retrieve
+          information stored in XML format, through versatile queries and it was
+          designed by the World Wide Web Consortium
+          <a href="https://www.w3.org/XML/Query/" target="_blank">(W3C).</a> and
+          it has focused with the following operations:
+        </p>
+        <ul>
+          <li>
+            Search XML data for objects that are at uknown levels of hierarchy.
+          </li>
+          <li>Perform structural transformations on the data.</li>
+          <li>Return results that have mixed types.</li>
+          <li>Update existing XML data.</li>
+        </ul>
+        <p>The following link <a href="https://en.wikibooks.org/wiki/XQuery/Benefits" target="_blank">Benefits of XQuery,</a> can offer information about the multiples advantages that we have with XQuery.
+           </p>
+      </section>
+
+      <section class="section2">
+        <h2>Main feature with XQuery</h2>
+        <p>
+          The main characteristic of XQuery is it applies an approach called a
+          FLWOR expression is similar to a SQL Select statement that
+          includes its most important clauses. The accurate acronym is the
+          following:
+        </p>
+
+        <ul>
+          <li>
+            <strong>F</strong> -> For clause, we can select the target node which
+            we apply the query.
+          </li>
+          <li>
+            <strong>L</strong> -> Let clause, it makes a link between a variable
+            and the sequence of nodes.
+          </li>
+          <li>
+            <strong>W</strong> -> Where clause, similar to SQL, it will apply
+            the filter to nodes through a conditional statement.
+          </li>
+          <li>
+            <strong>O</strong> -> Order clause, we can sort or organize the
+            nodes.
+          </li>
+          <li><strong>R</strong> -> Return clause, it will be our output.</li>
+        </ul>
+
+        <p>If we have more interest about the FLOWR approach we can check it on the following link <a href="https://www.progress.com/tutorials/xquery/restructuring-data-with-xquery-flwor-expressions-tutorial" target="_blank">Restructuring Data with XQuery.</a> </p>
+      </section>
+
+      <section class="section3">
+        <h2>An Example about how XQuery works</h2>
+        <p>We can do a practical exercise to understand better the XQuery file with its protocol and statement and how we apply it to XML Data. </p>
+        <h3>a. Main parts of XQuery file </h3> 
+        <p>It has been created in two parts. The first part specifies the version of XQuery syntax required to process the query. 
+          It could have a default namespace declaration that specifies the namespace URI to use for unprefixed elements and type names.
+           In this exercise, we do not have it.<br/>
+          The query body's second part contains an expression that constructs a list of title books with a particular conditional statement. 
+          We can see it in the following picture: 
+        </p>
+        <figure>
+        <img src="XQueryfile.png"
+        alt=" A query file that detects price of book until $36">
+        <figcaption><strong>A query file with format xq file</strong></figcaption>
+        </figure>
+        <h3>b.An  XML File applied XQ </h3> 
+        <p>The information related to Bookstore has been saved in an XML file. That file has a root called Bookstore with a child node called book. In the current file, we have available information of five books. 
+          Each book has the following nodes: title with an attributes called lang (language), author of each book, and finally the target in this exercise is the price. 
+           <br/>
+          
+          We can see it in the following picture that one node (book) can have many authors. 
+        </p>
+        <figure>
+        <img src="XMLfile.png"
+        alt="An XML file related with a bookstore. Each book has info about title,author name and price">
+        <figcaption><strong>A XML file with info related to five books (title, author name and price)</strong></figcaption>
+        </figure>
+
+        <h3>c.What is doing the XQuery File? </h3> 
+        <p>The XQuery applied the FLOWR approach with the following sequence:
+
+        </p>
+        <figure>
+        <img src="XQueryfile.png"
+        alt="An XML file related with a bookstore. Each book has info about title,author name and price">
+        <figcaption><strong>Checking the sequence of clause</strong></figcaption>
+        <ul>
+          <li> <strong>For</strong> clause chose to work with book in first instance, because we need to analyze it y defined as $b (var book). </li>
+          <li> <strong>Let</strong> clause makes the searching into bookstore, for each book.</li>
+          <li><strong>Where</strong> clause, analyze the child nodes that corresponds each book, but only analyze a price of book less than $30.</li>
+          <li><strong>Order</strong> clause, it did not require in this example.</li>
+          <li><strong>Return</strong> clause, it is working only with title node</li>
+        </ul>
+        </figure>
+
+        <h3>d.Final Result  </h3> 
+        <p>We offered details that XML file has only five books. The unique books that they had a price less than $30 we can see the next picture:
+        </p>
+        <figure>
+        <img src="XQueryResult.png"
+        alt="Final Result, only two books had a price less than $30. "
+        width="30%">
+
+        <figcaption><strong>Result using BaseX app</strong></figcaption>
+        </figure>
+
+        <p> There is a XQuery tester available in oder to analyze another XQ files. Its name is BaseX, and we can download it with this link, 
+          <a href="https://basex.org/download/" target="_blank"> BaseX, a XQuery Tester</a>. It works on Windows, however I can not promote it on MAC machine. </p>
+
+
+      </section>
+
+      <p class="section4">
+        <h2>XQIB and it can be used with XQuery</h2>
+        <p> We had some issues when we tried to get a free application which we let us running XQuery. However, there is a better option and its called
+          XQIB, really it means: XQuery In the Browser. XQIB allows us executree XQuery code, but we need to do it with JavaScript. We must create a script tag in the header, a script type "text/xquery" and 
+        we put our code inside of hmtl file. The engine is implemented in JavaScript. </p>
+        
+
+        <p>The main source of information is the oficial <a href="http://www.xqib.org/index.php" target="_blank">XQIB website</a> for more details.   </p>
+        <figure>
+          <img src="XQIB.png"
+          alt="Internal Stucture with HTML and XQIB. "
+          width="40%">
+  
+          <figcaption><strong>Three Section are required applying XQIB. </strong></figcaption>
+          
+          </figure>
+          <ul>
+           
+            <li><strong>Orange Section</strong> it has been embedded XQuery file into HTML file</li>
+            <li><strong>Blue Section </strong> A XQuery function has been created</li>
+            <li><strong>Red</strong> JavaScript invoqued the XQuery function</li>
+          </ul>
+      
+      </section>
+
+      
+    </div>
+  </body>
+</html>
