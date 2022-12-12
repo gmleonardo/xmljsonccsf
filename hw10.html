@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="description" content="working with SVG in the HTML" />
+    <title>XML and JSON formats</title>
+    <style>
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+
+      .section * {
+        width: 80%;
+       
+      }
+
+      .third *, .narrow {
+        width: 90%;
+      }
+
+      .tablefirst {
+        margin-left: 30px;
+      }
+
+     h1,h2{
+      color:rgb(98, 127, 171);
+     }
+
+      p {
+        line-height: 1.7;
+      }
+
+      img {
+        margin-left: 5rem;
+      }
+
+      button {
+        margin-left: 5rem;
+        margin-bottom: 5rem;
+        font-size: large;
+        background-color: blue;
+        color: aliceblue;
+        border-radius: 3px;
+      }
+      
+      table {
+        margin-left: 5rem;
+      }
+
+      th,td {
+        text-align: left;
+        padding: 10px;
+        border: 1px solid blue;
+
+      }
+  
+      p,
+      h2,
+      h1 {
+        margin-top: 2rem;
+        margin-left: 4rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>HomeWork 10: Workflows with XML & JSON files</h1>
+
+    <div class="section">
+      <h2>1. Conversion to XML and JSON file</h2>
+      <p>
+        We can use the following link, in order to create the conversion from
+        XML file to JSON file <a href="https://www.utilities-online.info/xmltojson#.U1qzEvldWSo"> Utilities-online </a>
+        where we have an input (XML) and button called XML to JSON and its
+        output with JSON format. For more detaills, we can see the next image.
+      </p>
+      <img
+        src="conversionxmljson.png"
+        alt=" Utilities-online using conversion XML to JSON file "
+      />
+    </div>
+
+    <div class="tablefirst">
+      <h2>2. Display information of new JSON file</h2>
+      <p> With the next button,  we show us the real info about JSON file which is defined by an array with six objects. 
+        In this case we are using info JSON as a local var into script tag. 
+      </p>
+      <button onclick="displayJson()">Display JSON file </button>
+      <table id="json"></table>
+
+     
+    </div>
+
+    <div class="third" >
+      <h2>3. Link with the JSON file</h2>
+      <p> If we wish to see the real content of the JSON file, choose the following link <a href="hw10.json" target="_blank" >Open JSON File</a></p>
+    </div>
+
+    <div class="fourth">
+      <h2>4. Question about a JSON object</h2>
+      <p> Suppose you have the following code in JavaScript (recognize the data being passed to the variable in JSON format</p>
+      <img
+        src="question4.png"
+        alt=" An example of JSON format"
+      />
+
+      <p>Then, later in the program, that variable <strong>friends</strong> (that looks like an array) is used to write some data in a table.<br>
+        So, if you see the following command in this same JavaScript code, that is referring to the above JSON structure,</p>
+        <img
+        src="question4a.png"
+        alt=" An example of JSON format"
+      />
+      <p>What will be the content of the variable <strong>tablecell1</strong>? Remember, the <strong>var</strong> statement is only declaring the tablecell1 variable!</p>
+      <p class="narrow">The variable <strong>tablecell1</strong> will be reading from a JSON file which has properties of an Array. A array start with index =0. So, its value will be
+        <strong>tablecell1 = "John sales rep"</strong> because it was defined as a concatenated string and it will be mixed with the <strong>tr and td tags</strong> in order to create an row into a table. The concatenation was created by elements of first object, <strong>friends[0].name= "John"</strong>  and <strong>friends[0].profession = "sales rep"</strong> <br>
+         However in reality, it will be a row into a table. 
+      </p>
+
+      <table>
+        <tr>
+          <td>John</td>
+          <td>sales rep</td>
+        </tr>
+      </table>
+
+      <p> And the real structure in the HTML file will be </p>
+      <img
+        src="question4b.png"
+        alt=" An example of a row into a table tag"
+      />
+
+      
+      
+    </div>
+    <script>
+      var i;
+      var peopleinfo= '<tr><th>' + ' First Name ' + '</th><th>' + " Last Name " + '</th><th>'+ " Profession " + '</th></tr>';
+      var people = [
+        {
+          "firstName": "Janet",
+          "lastName": "Doe",
+          "profession": "Engineer"
+        },
+        {
+          "firstName": "Anna",
+          "lastName": "Smith",
+          "profession": "Instructor"
+        },
+       {
+          "firstName": "Peter",
+          "lastName": "Jackson",
+          "profession": "Writer"
+       },
+       {
+          "firstName": "Edgard",
+          "lastName": "Lambart",
+          "profession": "Engineer"
+       },
+       {
+        "firstName": "Lucia",
+        "lastName": "Rodriguez",
+        "profession": "Journalist"
+       },
+       {
+         "firstName": "Mark",
+         "lastName": "Douglas",
+         "profession": "Doctor"
+       }
+      ];
+  
+      
+      for (i=0;i<people.length;i++) {
+        
+        peopleinfo += '<tr><td>' + people[i].firstName + '</td><td>' + people[i].lastName + '</td><td>'+ people[i].profession + '</td></tr>';
+      }
+     
+  
+      function displayJson() { 
+        document.getElementById("json").innerHTML = peopleinfo;
+      }
+  </script>
+  </body>
+  
+</html>
+
+
